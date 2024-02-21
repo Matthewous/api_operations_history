@@ -1,17 +1,33 @@
 package ru.netology.moguchev;
+import java.util.Scanner;
+import java.time.LocalDate;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+class FinancialTransaction {
+
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        // Создание переменных
+        int transactionId;
+        String transactionType;
+        double amount;
+        LocalDate transactionDate;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Создание объекта Scanner
+        Scanner scanner = new Scanner(System.in);
+
+        // Заполнение переменных пользователем
+//        System.out.println("Введите идентификатор транзакции:");
+//        transactionId = scanner.nextInt();
+
+        System.out.println("Введите тип транзакции:");
+        transactionType = scanner.nextLine();
+
+        System.out.println("Введите сумму транзакции:");
+        amount = scanner.nextDouble();
+
+        System.out.println("Введите дату транзакции (в формате гггг-мм-дд):");
+        transactionDate = LocalDate.parse(scanner.nextLine());
+
+        // Вывод информации в консоль
+        System.out.println("Финансовая транзакция: " + " " + transactionType + " " + amount + " " + transactionDate);
     }
 }
